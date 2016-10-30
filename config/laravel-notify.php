@@ -29,6 +29,11 @@ return [
     'newest_on_top' => false,
 
     /*
+     * Use this setting to show the progress bar for notifications by default.
+     */
+    'showProgressbar' => false,
+
+    /*
      * Use this setting to set the default notification placement
      */
     'placement' => [
