@@ -33,7 +33,7 @@ class LaravelNotifyServiceProvider extends ServiceProvider
 
             $laravelNotify = Session::get('laravel-notify', []);
 
-            $view->with(compact('laravelNotifyConfig'; 'laravelShouldNotify'));
+            $view->with(compact('laravelNotifyConfig', 'laravelShouldNotify', 'laravelNotify'));
         });
     }
 
