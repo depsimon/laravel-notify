@@ -12,10 +12,10 @@
             element: '{{ array_get($laravelNotifyConfig, 'title', 'body') }}',
             position: null,
             type: '{{ array_get($laravelNotify, 'type', $laravelNotifyConfig['type']) }}',
-            allow_dismiss: {{ array_get($laravelNotify, 'allow_dismiss', $laravelNotifyConfig['allow_dismiss']) }},
-            newest_on_top: {{ array_get($laravelNotify, 'newest_on_top', $laravelNotifyConfig['newest_on_top']) }},
-            showProgressbar: {{ array_get($laravelNotify, 'showProgressbar', $laravelNotifyConfig['showProgressbar']) }},
-            placement: {{ json_encode(array_get($laravelNotify, 'placement', $laravelNotifyConfig['placement'])) }},
+            allow_dismiss: {{ array_get($laravelNotify, 'allow_dismiss', $laravelNotifyConfig['allow_dismiss']) ? 'true' : 'false' }},
+            newest_on_top: {{ array_get($laravelNotify, 'newest_on_top', $laravelNotifyConfig['newest_on_top']) ? 'true' : 'false' }},
+            showProgressbar: {{ array_get($laravelNotify, 'showProgressbar', $laravelNotifyConfig['showProgressbar']) ? 'true' : 'false' }},
+            placement: {!! json_encode(array_get($laravelNotify, 'placement', $laravelNotifyConfig['placement'])) !!},
             offset: {{ array_get($laravelNotify, 'offset', $laravelNotifyConfig['offset']) }},
             spacing: {{ array_get($laravelNotify, 'spacing', $laravelNotifyConfig['spacing']) }},
             z_index: {{ array_get($laravelNotify, 'z_index', $laravelNotifyConfig['z_index']) }},
@@ -44,5 +44,4 @@
             '</div>'
         });
     </script>
-
 @endif
